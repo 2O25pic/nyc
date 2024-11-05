@@ -1,0 +1,1149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    background-color: black;
+    scroll-behavior: smooth;
+    /* will-change: transform; /* This helps in hardware acceleration */
+    */
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Button styles with images for ON/OFF */
+
+.button {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-size: cover;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+/* ON button with green image */
+
+.on-button {
+    background-image: url('img/on.png');
+}
+
+/* OFF button with red image */
+
+.off-button {
+    background-image: url('img/off.png');
+}
+
+.marquee-area {
+    display: none;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    transition: transform 1s ease-in-out;
+}
+
+.hide-left {
+    transform: translateX(-100vw);
+}
+
+.marquee.top,
+.marquee.bottom {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.marquee.top {
+    top: 4%;
+}
+
+.marquee.bottom {
+    bottom: 12%;
+}
+
+.vertical-marquee.left-side,
+.vertical-marquee.right-side {
+    position: absolute;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    bottom: 4%;
+}
+
+.vertical-marquee.left-side {
+    left: 0;
+}
+
+.vertical-marquee.right-side {
+    right: 0;
+}
+
+.marquee-area img {
+    width: 20px;
+    height: auto;
+    margin: 10px;
+}
+
+@media (max-width: 480px) {
+    .marquee-area img {
+        width: 20px;
+    }
+}
+
+.info {
+    text-align: center;
+    /* Center text and image */
+    position: absolute;
+    /* Position it above the button */
+    top: 35%;
+    /* Adjust this value as needed */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    /* Ensure it is above other elements */
+}
+
+.info-image {
+    width: 50px;
+    /* Adjust the size of the image */
+    height: auto;
+    margin-bottom: 10px;
+    /* Space between image and text */
+    animation: shake-vertical 1s linear 0s infinite normal none;
+    */
+}
+
+.info-text {
+    color: white;
+    /* Text color */
+    font-size: 18px;
+    /* Font size */
+    padding: 5px;
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    border-radius: 12px;
+    -webkit-box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 1);
+    -moz-box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 1);
+}
+
+@keyframes shake-vertical {
+    0% {
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(-8px);
+    }
+    20% {
+        transform: translateY(8px);
+    }
+    30% {
+        transform: translateY(-8px);
+    }
+    40% {
+        transform: translateY(8px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    60% {
+        transform: translateY(8px);
+    }
+    70% {
+        transform: translateY(-8px);
+    }
+    80% {
+        transform: translateY(6.4px);
+    }
+    90% {
+        transform: translateY(-6.4px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* confetti*/
+
+
+
+/* Default box styling */
+
+main {
+    max-width: 450px;
+    margin: 0 auto;
+    /* background color ke liye */
+    /* background-color: black;*/
+    /* background image ke liye */
+    /*background-image: url(https://img.freepik.com/premium-photo/purple-blue-abstract-background-with-colors-series_1085074-5520.jpg); background-size: cover; background-repeat: no-repeat;*/
+    text-align: center;
+    transform: translateZ(0);
+    /* Smoothen rendering with hardware acceleration */
+    padding-bottom: 150px;
+
+}
+
+.m1 {
+    position: fixed;
+    left: 1%;
+    width: auto;
+    height: 100%;
+    top: 1%;
+    color: #000;
+    z-index: 1;
+}
+
+.m2 {
+    position: fixed;
+    right: 1%;
+    width: auto;
+    height: 100%;
+    top: 1%;
+    color: #000;
+    z-index: 1;
+}
+
+.tandi-name input[type="text"] {
+    background: radial-gradient(circle at 50% 50%, rgba(139, 195, 74, 1) 0%, rgba(255, 152, 0, 1) 50%, rgba(63, 81, 181, 1) 100%);
+    color: #000;
+    border-radius: 10px;
+    box-sizing: border-box;
+    border-color: black;
+    padding: 5px;
+    position: fixed;
+    z-index: 1;
+    left: 10px;
+    bottom: 3px;
+    height: 55px;
+    animation: pulse 2.5s infinite;
+    border: 2px solid black;
+    width: 70%;
+    text-align: center;
+    font-size: 18px;
+    display: inline-block
+}
+
+::-webkit-input-placeholder {
+    color: #000
+}
+
+
+::placeholder {
+    color: white;
+}
+
+.tandi-name .btn {
+    background: radial-gradient(circle at 50% 50%, rgba(139, 195, 74, 1) 0%, rgba(255, 152, 0, 1) 50%, rgba(63, 81, 181, 1) 100%);
+    border-radius: 10px;
+    border-color: black;
+    font-size: 18px;
+    padding: 4px;
+    z-index: 2;
+    position: fixed;
+    right: 2px;
+    bottom: 3px;
+    height: 55px;
+    width: 23%;
+    display: inline-block;
+    color: white;
+    background-color: #eb10c3;
+    letter-spacing: 0.5px;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    line-height: 36px;
+    outline: 0;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-decoration: none;
+    animation: shake 5s infinite
+}
+
+.shake {
+    -webkit-animation-name: shake;
+    animation-name: shake
+}
+
+@-webkit-keyframes headShake {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+    6.5% {
+        -webkit-transform: translateX(-6px) rotateY(-9deg);
+        transform: translateX(-6px) rotateY(-9deg)
+    }
+    18.5% {
+        -webkit-transform: translateX(5px) rotateY(7deg);
+        transform: translateX(5px) rotateY(7deg)
+    }
+    31.5% {
+        -webkit-transform: translateX(-3px) rotateY(-5deg);
+        transform: translateX(-3px) rotateY(-5deg)
+    }
+    43.5% {
+        -webkit-transform: translateX(2px) rotateY(3deg);
+        transform: translateX(2px) rotateY(3deg)
+    }
+    50% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+
+@-webkit-keyframes shake {
+    0%,
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0)
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0)
+    }
+}
+
+@keyframes shake {
+    0%,
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0)
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0)
+    }
+}
+
+.pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05)
+    }
+    to {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+}
+
+@keyframes pulse {
+    0% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05)
+    }
+    to {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+}
+
+.at-item {
+    width: 100px;
+    height: 100px;
+    background-color: #ffe672;
+    animation-name: shake-center;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    /* shorthand animation: shake-center 0.2s linear 1s infinite normal none;*/
+}
+
+@keyframes shake-center {
+    0% {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+    10% {
+        transform: rotate(8deg);
+    }
+    20% {
+        transform: rotate(-10deg);
+    }
+    30% {
+        transform: rotate(10deg);
+    }
+    40% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(-10deg);
+    }
+    70% {
+        transform: rotate(10deg);
+    }
+    80% {
+        transform: rotate(-8deg);
+    }
+    90% {
+        transform: rotate(8deg);
+    }
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+}
+
+.banner {
+    width: 340px;
+    z-index: 1;
+    animation: shake-center 7.2s linear 0s infinite normal none;
+}
+
+@keyframes shake-center {
+    0% {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+    10% {
+        transform: rotate(8deg);
+    }
+    20% {
+        transform: rotate(-10deg);
+    }
+    30% {
+        transform: rotate(10deg);
+    }
+    40% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(-10deg);
+    }
+    70% {
+        transform: rotate(10deg);
+    }
+    80% {
+        transform: rotate(-8deg);
+    }
+    90% {
+        transform: rotate(8deg);
+    }
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+}
+
+.banner1 {
+    width: 50%;
+    height: 4%;
+}
+
+.at-item3 {
+    animation-name: pulse-zoomout;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    /* shorthand animation: pulse-zoomout 1s linear 0s infinite normal none;*/
+}
+
+@keyframes pulse-zoomout {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#envelope {
+    position: absolute;
+    top: calc(50vh - 70px);
+    width: 300px;
+    height: 300px;
+    z-index: 0;
+    left: 12%;
+}
+
+#envelope>* {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#back {
+    display: block;
+    z-index: 0;
+}
+
+#front {
+    display: block;
+    z-index: 10;
+}
+
+#top {
+    display: block;
+    z-index: 11;
+}
+
+#top.animate,
+#front.animate,
+#back.animate,
+#envelope button.animate {
+    opacity: 0;
+    transition: opacity 1s;
+    transition-delay: 1s;
+}
+
+#letter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* padding:10px;*/
+    z-index: 5;
+    left: 15px;
+    right: 15px;
+    bottom: 5px;
+    top: 105px;
+    /* https://boxshadows.com/presets */
+    overflow: hidden;
+    -webkit-box-shadow: 0px 0px 44px 0px #ff0000;
+    -moz-box-shadow: 0px 0px 44px 0px #ff0000;
+    box-shadow: 0px 0px 44px 0px #ff0000;
+    border-radius: 20px;
+    color: yellow;
+    background-color: #556677;
+    text-shadow: 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a;
+}
+
+#letter.animate {
+    animation: makebig 2s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes makebig {
+    0% {
+        top: 105px;
+        left: 15px;
+        right: 15px;
+        bottom: 5px;
+        font-size: 16px;
+    }
+    33% {
+        top: -100px;
+        left: 15px;
+        right: 15px;
+        bottom: 150px;
+        font-size: 16px;
+    }
+    50% {
+        top: -100px;
+        left: -25px;
+        right: -25px;
+        bottom: -100px;
+        font-size: 24px;
+    }
+}
+
+#letter h1 {
+    font-size: inherit;
+}
+
+#letter h2 {
+    font-size: inherit;
+}
+
+#letter img {
+    height: 50%;
+}
+
+#envelope button {
+    display: block;
+    z-index: 15;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: gold;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    top: calc(200px - 25px);
+    left: calc(150px - 25px);
+    transition: transform 1s, background-color 1s, color 1s;
+}
+
+#envelope button:hover {
+    background-color: pink;
+    transform: scale(1.5);
+    color: black;
+    transition: transform 1s, background-color 1s, color 1s;
+}
+
+@font-face {
+    font-family: 'KrPrincess';
+    src: url('https://cdn.jsdelivr.net/gh/2O25pic/nyc@latest/Skeletor.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.neon-text {
+    font-family: 'KrPrincess', sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+    /*display: flex; flex-wrap: wrap;*/
+    color: white;
+}
+
+.neon-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-100px);
+    /* Start position above the view */
+    animation: dropDown 0.5s forwards, neon-glow 2s infinite alternate;
+}
+
+@keyframes dropDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Neon shadow animation */
+
+@keyframes neon-glow {
+    0% {
+        text-shadow: 2px 2px 0 #000000, 2px 2px 5px #61D0FE, 0 0 10px #61D0FE, 0 0 20px #61D0FE, 0 0 30px #61D0FE, 0 0 40px #61D0FE;
+    }
+    50% {
+        text-shadow: 2px 2px 0 #000000, 2px 2px 5px #FF53D1, 0 0 10px #FF53D1, 0 0 20px #FF53D1, 0 0 30px #FF53D1, 0 0 40px #FF53D1;
+    }
+    100% {
+        text-shadow: 2px 2px 0 #000000, 2px 2px 5px #FFD869, 0 0 10px #FFD869, 0 0 20px #FFD869, 0 0 30px #FFD869, 0 0 40px #FFD869;
+    }
+}
+
+/* Assign neon glow animation to each color class */
+
+.color-1 {
+    animation-delay: 0s, 0s;
+}
+
+.color-2 {
+    animation-delay: 0.1s, 0.2s;
+}
+
+.color-3 {
+    animation-delay: 0.2s, 0.4s;
+}
+
+.color-4 {
+    animation-delay: 0.3s, 0.6s;
+}
+
+.color-5 {
+    animation-delay: 0.4s, 0.8s;
+}
+
+.color-6 {
+    animation-delay: 0.5s, 1s;
+}
+
+.my-username {
+    width: 250px;
+    text-align: center;
+    margin-left: 20%;
+    animation: shakeZoomEffect 3s ease-in-out infinite;
+}
+
+/* Keyframes for shake, zoom in, and zoom out */
+
+@keyframes shakeZoomEffect {
+    0% {
+        transform: translate(0, 0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translate(-5px, 0);
+        /* Left shake */
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translate(5px, 0);
+        /* Right shake */
+    }
+    100% {
+        transform: translate(0, 0);
+        /* Back to normal */
+    }
+}
+
+#second-message {
+    -webkit-box-shadow: 0px 0px 44px 0px #ff0000;
+    -moz-box-shadow: 0px 0px 44px 0px #ff0000;
+    box-shadow: 0px 0px 44px 0px #ff0000;
+    border-radius: 20px;
+    color: yellow;
+    background-color: #556677;
+    text-shadow: 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a;
+    width: 300px;
+    font-size: 8px;
+    padding: 10px;
+    line-height: 1.9;
+    /* Add line spacing */
+}
+
+/* Google Font Noto Sans import */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&display=swap');
+.text {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 35px;
+    font-weight: 900;
+    color: transparent;
+    /* Make text color transparent for the background clip */
+    text-align: center;
+    background: url('https://img.freepik.com/free-vector/linear-flat-abstract-lines-pattern_23-2148939520.jpg') no-repeat center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.text::before {
+    content: attr(data-text);
+    /* Same text as the main text */
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 35px;
+    font-weight: 900;
+    color: transparent;
+    /* Make shadow text transparent */
+    position: absolute;
+    /* Use absolute positioning */
+    left: 0;
+    /* Align with the main text */
+    top: 0;
+    /* Align with the main text */
+    z-index: -1;
+    /* Push shadow behind the main text */
+    animation: glowEffect 3s infinite;
+    text-transform: uppercase;
+    will-change: text-shadow;
+}
+
+/* Text glow animation with different colors */
+
+@keyframes glowEffect {
+    0% {
+        text-shadow: 0 0 10px red, 0 0 20px yellow;
+    }
+    50% {
+        text-shadow: 0 0 10px blue, 0 0 20px cyan;
+    }
+    100% {
+        text-shadow: 0 0 10px green, 0 0 20px lime;
+    }
+}
+
+
+
+
+#second-name {
+    width: 250px;
+    position: relative;
+    z-index: -10;
+}
+
+.shareBtn,
+.shareShow {
+    position: fixed;
+    right: calc(50% - 145px);
+    bottom: 5px;
+    width: 300px;
+    height: 60px;
+    background-color: #007f00;
+    border-radius: 100px;
+    color: #fff;
+    line-height: 60px;
+    text-align: center;
+    letter-spacing: 1px;
+    overflow: hidden;
+    display: none;
+}
+
+.shareBtn.active {
+    display: block;
+    font-weight: bold;
+}
+
+.shareShow {
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    background-color: red;
+    border-radius: 50px;
+    position: fixed;
+    left: 50%;
+    /* Position to the center horizontally */
+    transform: translateX(-50%);
+    /* Adjust to perfectly center */
+    bottom: 25px;
+    /* Keeps the button at the bottom */
+    text-align: center;
+}
+
+.platforms {
+    position: fixed;
+    right: calc(50% - 145px);
+    height: 100px;
+    width: 300px;
+    bottom: 75px;
+    border-radius: 5px;
+    visibility: hidden;
+    transform: scale(1);
+    opacity: 0;
+}
+
+.platforms.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.platformIcons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+}
+
+.socialBox {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* WhatsApp Styles */
+
+.whatsapp {
+    background-color: #1a5275;
+}
+
+.whatsapp:hover {
+    background-color: #20b358;
+}
+
+/* Facebook Styles */
+
+.facebook {
+    background-color: #1a5275;
+}
+
+.facebook:hover {
+    background-color: #324e84;
+}
+
+/* Icon Styling */
+
+.socialBox img {
+    animation: tada 2s ease-in-out infinite;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 5px;
+}
+
+/* Text Styling */
+
+.socialBox span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#closeBtn {
+    background-color: red;
+}
+
+.shareBtn,
+.shareShow,
+.platforms a {
+    text-decoration: none;
+}
+
+/* Animation for the Emoji */
+
+@keyframes shake-right {
+    0% {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+    10% {
+        transform: rotate(8deg);
+    }
+    20% {
+        transform: rotate(-10deg);
+    }
+    30% {
+        transform: rotate(10deg);
+    }
+    40% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(-10deg);
+    }
+    70% {
+        transform: rotate(10deg);
+    }
+    80% {
+        transform: rotate(-8deg);
+    }
+    90% {
+        transform: rotate(8deg);
+    }
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+}
+
+/* Apply the shake-right animation to span (emoji) */
+
+.span {
+    display: inline-block;
+    animation: shake-right 2s infinite ease-in-out;
+    font-size: 24px;
+    /* Adjust the emoji size if needed */
+}
+
+.tada {
+    -webkit-animation-name: tada;
+    animation-name: tada
+}
+
+@-webkit-keyframes tada {
+    0% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+    10%,
+    20% {
+        -webkit-transform: scale3d(.9, .9, .9) rotate(-3deg);
+        transform: scale3d(.9, .9, .9) rotate(-3deg)
+    }
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate(3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate(3deg)
+    }
+    40%,
+    60%,
+    80% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg)
+    }
+    to {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+}
+
+@keyframes tada {
+    0% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+    10%,
+    20% {
+        -webkit-transform: scale3d(.9, .9, .9) rotate(-3deg);
+        transform: scale3d(.9, .9, .9) rotate(-3deg)
+    }
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate(3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate(3deg)
+    }
+    40%,
+    60%,
+    80% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg)
+    }
+    to {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1)
+    }
+}
+
+.leftcurtain{
+        width: 50%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        position: absolute;
+        z-index: 2;
+    }
+    .rightcurtain{
+        width: 50%;
+        height: 100%;
+        right: 0px;
+        top: 0px;
+        position: absolute;
+        z-index: 3;
+    }
+    .rightcurtain img, .leftcurtain img{
+        width: 100%;
+        height: 100%;
+    }
+    .rope{
+        position: absolute;
+        top: 5px;
+        left: 35%;
+        z-index: 4;
+    } 
+    .centered {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    a.rope {
+        text-decoration:none;
+    }
+    .tada{
+        -webkit-animation-name:tada;
+        animation-name:tada;
+    }
+    @-webkit-keyframes tada {
+        0%{-webkit-transform:scaleX(1);transform:scaleX(1)}
+        10%,20%{-webkit-transform:scale3d(.9,.9,.9) rotate(-3deg);transform:scale3d(.9,.9,.9) rotate(-3deg)}
+        30%,50%,70%,90%{-webkit-transform:scale3d(1.1,1.1,1.1) rotate(3deg);transform:scale3d(1.1,1.1,1.1) rotate(3deg)}
+        40%,60%,80%{-webkit-transform:scale3d(1.1,1.1,1.1) rotate(-3deg);transform:scale3d(1.1,1.1,1.1) rotate(-3deg)}
+        to{-webkit-transform:scaleX(1);transform:scaleX(1)}
+    }
+
+    /* Message Icon and Notification */
+    .message-icon {
+        display: inline-block;
+        position: relative;
+        margin-right: 10px;
+    }
+
+    .message-icon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .notification {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        width: 25px;
+        height: 25px;
+        background-color: black;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 25px;
+        animation: rotate-in 1.5s ease-in-out infinite;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    @keyframes rotate-in {
+        0% {
+            transform: rotate(-90deg) translateX(50px);
+            opacity: 0;
+        }
+        100% {
+            transform: rotate(0deg) translateX(0);
+            opacity: 1;
+        }
+    }
+    @keyframes bounce-top {
+        0% { transform:translateY(0); }
+        25% { transform:translateY(0); }
+        40% { transform:translateY(-24px); }
+        55% { transform:translateY(0); }
+        65% { transform:translateY(-12px); }
+        75% { transform:translateY(0); }
+        82% { transform:translateY(-6px); }
+        87% { transform:translateY(0); }
+        93% { transform:translateY(-4px); }
+        100% { transform:translateY(0); }
+    }
